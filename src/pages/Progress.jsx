@@ -11,38 +11,42 @@ export default function Progress() {
     const achievements = [
         {
             id: 1,
-            title: 'First Step',
-            desc: 'Complete your first task',
+            title: 'First Tremor',
+            desc: 'Do one small thing. Pretend it was huge.',
             unlocked: user.completedTasks.length >= 1,
-            icon: '🌊'
+            iconSrc: '/1619701407indian-head-color-silhouette.svg',
+            iconAlt: 'First'
         },
         {
             id: 2,
-            title: 'Committed',
-            desc: 'Complete 3 tasks',
+            title: 'Second Weather',
+            desc: 'Do three. Keep a straight face.',
             unlocked: user.completedTasks.length >= 3,
-            icon: '🐋'
+            iconSrc: '/Eskimo-Man-Fishing-Line-Art.svg',
+            iconAlt: 'Second'
         },
         {
             id: 3,
             title: 'Unmasked',
-            desc: 'Complete all tasks',
+            desc: 'Finish the list, then deny it.',
             unlocked: user.completedTasks.length >= totalTasks,
-            icon: '🏆'
+            iconSrc: '/Hulubolu_1766300828.svg',
+            iconAlt: 'Unmasked'
         },
         {
             id: 4,
             title: 'Level 5',
-            desc: 'Reach level 5',
+            desc: 'Reach level 5, name your ghost.',
             unlocked: user.level >= 5,
-            icon: '⭐'
+            iconSrc: '/Donno_1770553073.svg',
+            iconAlt: 'Level'
         },
     ];
 
     return (
         <div className="progress-page">
             <section className="page-header">
-                <h1>📊 Your Progress</h1>
+                <h1>Your Progress</h1>
                 <p className="subtitle">Tracking your unmasking journey</p>
             </section>
 
@@ -98,14 +102,16 @@ export default function Progress() {
                 </div>
 
                 <div className="achievements-section">
-                    <h2>🏆 Achievements</h2>
+                    <h2>Achievements</h2>
                     <div className="achievements-grid">
                         {achievements.map(achievement => (
                             <div
                                 key={achievement.id}
                                 className={`achievement-card ${achievement.unlocked ? 'unlocked' : 'locked'}`}
                             >
-                                <div className="achievement-icon">{achievement.icon}</div>
+                                <div className="achievement-icon">
+                                    <img src={achievement.iconSrc} alt={achievement.iconAlt} />
+                                </div>
                                 <h3>{achievement.title}</h3>
                                 <p>{achievement.desc}</p>
                                 {achievement.unlocked && <span className="unlocked-badge">✓ Unlocked</span>}
@@ -115,7 +121,7 @@ export default function Progress() {
                 </div>
 
                 <div className="task-history-section">
-                    <h2>📝 Completed Tasks</h2>
+                    <h2>Completed Tasks</h2>
                     {user.completedTasks.length === 0 ? (
                         <p className="empty-state">No tasks completed yet. Start your journey on the Tasks page!</p>
                     ) : (

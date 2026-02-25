@@ -1,46 +1,53 @@
+import { useEffect } from 'react';
 import { useUser } from '../context/UserContext';
 
 export default function Journey() {
+    useEffect(() => {
+        document.body.classList.add('journey-theme');
+        return () => {
+            document.body.classList.remove('journey-theme');
+        };
+    }, []);
+
     return (
         <div className="journey-page">
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
             <section className="page-header">
-                <h1>Your Unmasking Journey</h1>
-                <p className="subtitle">Removing the gear, one piece at a time</p>
+                <h1>The Blue Corridor</h1>
+                <p className="subtitle">You walk, the floor walks back.</p>
             </section>
 
             <section className="content-section">
                 <div className="container">
-                    <h2>Late Diagnosis: The Heavy Gear</h2>
+                    <h2>Late Diagnosis: The Museum of Masks</h2>
                     <p className="lead">
-                        You've been diving with full scuba equipment for years, maybe decades.
-                        The mask fogged your vision. The regulator controlled every breath.
-                        And you thought everyone dived this way.
+                        You learned the choreography late; the music was already tired.
                     </p>
 
                     <div className="info-grid">
                         <div className="info-card">
                             <h3>The Discovery</h3>
                             <p>
-                                Many autistic adults don't receive diagnosis until their 30s, 40s, or later.
-                                The revelation that you've been "wearing gear" your whole life can be
-                                simultaneously liberating and devastating.
+                                The label arrives like a receipt you never asked for.
+                                It still explains the bill.
                             </p>
                         </div>
 
                         <div className="info-card">
                             <h3>The Grief</h3>
                             <p>
-                                It's okay to grieve. Grieve the childhood you didn't understand.
-                                Grieve the energy you spent trying to breathe through a regulator.
-                                Grieve the authentic self you couldn't show.
+                                You grieve the performance, and the applause you never wanted to earn.
                             </p>
                         </div>
 
                         <div className="info-card">
                             <h3>The Relief</h3>
                             <p>
-                                But there's also relief. Finally understanding why the gear felt so heavy.
-                                Why everyone else seemed to dive effortlessly. Why you were always so exhausted.
+                                Relief shows up late, carrying a folding chair.
                             </p>
                         </div>
                     </div>
@@ -49,35 +56,42 @@ export default function Journey() {
 
             <section className="dark-section">
                 <div className="container">
-                    <h2>Understanding Masking</h2>
+                    <h2>Masking, the Soft Armor</h2>
                     <p className="lead">
-                        Masking is your scuba gear. It's the collection of behaviors you learned
-                        to appear neurotypical:
+                        A small list of tricks the body learned without consent:
                     </p>
 
                     <div className="masking-examples">
                         <div className="masking-item">
-                            <span className="icon">😐</span>
+                            <span className="icon">
+                                <img src="/Flower159_1771925799.svg" alt="Mask" />
+                            </span>
                             <h4>Facial Expression Control</h4>
-                            <p>Manually adjusting your face to match social expectations</p>
+                            <p>Adjusting the face like borrowed furniture</p>
                         </div>
 
                         <div className="masking-item">
-                            <span className="icon">👀</span>
+                            <span className="icon">
+                                <img src="/Evil-old-snake-1_1754288143.svg" alt="Eyes" />
+                            </span>
                             <h4>Forced Eye Contact</h4>
-                            <p>Staring at faces when you'd rather look away</p>
+                            <p>Staring at faces when the floor is kind</p>
                         </div>
 
                         <div className="masking-item">
-                            <span className="icon">🤐</span>
+                            <span className="icon">
+                                <img src="/young-girl-face_1771436666.svg" alt="Stims" />
+                            </span>
                             <h4>Suppressing Stims</h4>
-                            <p>Holding back natural self-regulating movements</p>
+                            <p>Folding the hands until they lose the plot</p>
                         </div>
 
                         <div className="masking-item">
-                            <span className="icon">🎭</span>
+                            <span className="icon">
+                                <img src="/Turtle_IX_1771926333.svg" alt="Scripts" />
+                            </span>
                             <h4>Social Scripts</h4>
-                            <p>Memorizing conversational patterns rather than responding naturally</p>
+                            <p>Reciting lines that never sit still</p>
                         </div>
                     </div>
                 </div>
@@ -85,20 +99,19 @@ export default function Journey() {
 
             <section className="content-section">
                 <div className="container">
-                    <h2>Autistic Burnout</h2>
+                    <h2>Burnout: The Power Cuts</h2>
                     <p className="lead">
-                        Diving with heavy gear for too long leads to exhaustion.
-                        In autism, this is burnout - a state of collapse from sustained masking.
+                        The lights flicker, the stage goes empty.
                     </p>
 
                     <div className="burnout-warning">
                         <h3>Signs of Burnout:</h3>
                         <ul>
-                            <li>Losing skills you previously had</li>
-                            <li>Increased sensory sensitivities</li>
-                            <li>Loss of speech or struggling with communication</li>
-                            <li>Inability to mask even when you want to</li>
-                            <li>Complete exhaustion that sleep doesn't fix</li>
+                            <li>Losing skills you used yesterday</li>
+                            <li>Senses turning the volume knob up</li>
+                            <li>Speech taking the day off</li>
+                            <li>The mask slipping even when you beg it</li>
+                            <li>Sleep bringing receipts, not rest</li>
                         </ul>
                     </div>
                 </div>

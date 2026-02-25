@@ -5,45 +5,51 @@ import { useUser } from '../context/UserContext';
 const TASKS = [
     {
         id: 'task1',
-        title: 'Allow yourself to stim freely',
-        description: 'For 10 minutes today, let yourself engage in any stimming behavior without suppressing it.',
+        title: 'Let the hands do their weather',
+        description: 'Give yourself 10 quiet minutes to move as you like, no notes, no audience.',
         points: 10,
-        category: 'home'
+        category: 'home',
+        icon: '/NativeAmerican2.svg'
     },
     {
         id: 'task2',
-        title: 'Skip forced eye contact',
-        description: 'In one conversation today, don\'t force eye contact. Notice how it feels.',
+        title: 'Look past, not through',
+        description: 'In one talk, let your gaze rest where it wants. Keep the thread anyway.',
         points: 15,
-        category: 'social'
+        category: 'social',
+        icon: '/nativeamericanman.svg'
     },
     {
         id: 'task3',
-        title: 'Wear sensory-friendly clothes',
-        description: 'Choose comfort over appearance. Wear what feels good on your skin.',
+        title: 'Dress for the inner weather',
+        description: 'Wear what calms your skin, even if the mirror argues.',
         points: 10,
-        category: 'home'
+        category: 'home',
+        icon: '/African-Art-3.svg'
     },
     {
         id: 'task4',
-        title: 'Take an unmasking break',
-        description: 'Spend 15 minutes in a quiet space without performing any social scripts.',
+        title: 'Take the mask off the table',
+        description: 'Spend 15 minutes in a quiet place without rehearsing anything.',
         points: 15,
-        category: 'self-care'
+        category: 'self-care',
+        icon: '/Dancer6_1767858911.svg'
     },
     {
         id: 'task5',
-        title: 'Journal about masking',
-        description: 'Write down one masking behavior you noticed today. No judgment, just observation.',
+        title: 'Write the small incident',
+        description: 'Note one masking moment today. No judgment, just the shape of it.',
         points: 20,
-        category: 'reflection'
+        category: 'reflection',
+        icon: '/Dancer7_1768026236.svg'
     },
     {
         id: 'task6',
-        title: 'Say "no" to sensory overload',
-        description: 'Decline one activity that would overwhelm your senses. Your comfort matters.',
+        title: 'Refuse the loud door',
+        description: 'Decline one thing that would overload your senses. Keep your quiet.',
         points: 25,
-        category: 'boundaries'
+        category: 'boundaries',
+        icon: '/Deer44_1768551769.svg'
     }
 ];
 
@@ -61,9 +67,13 @@ export default function Tasks() {
 
     return (
         <div className="tasks-page">
+            <div className="smoke smoke-1"></div>
+            <div className="smoke smoke-2"></div>
+            <div className="smoke smoke-3"></div>
+            <div className="smoke smoke-4"></div>
             <div className="tasks-header">
-                <h1>🎯 Daily Unmasking Tasks</h1>
-                <p>Small steps toward authentic living</p>
+                <h1>Daily Unmasking Tasks</h1>
+                <p>Small steps. Big pauses.</p>
 
                 <div className="progress-stats">
                     <div className="stat-card">
@@ -98,19 +108,19 @@ export default function Tasks() {
                     className={filter === 'home' ? 'active' : ''}
                     onClick={() => setFilter('home')}
                 >
-                    🏠 Home
+                    Home
                 </button>
                 <button
                     className={filter === 'social' ? 'active' : ''}
                     onClick={() => setFilter('social')}
                 >
-                    👥 Social
+                    Social
                 </button>
                 <button
                     className={filter === 'self-care' ? 'active' : ''}
                     onClick={() => setFilter('self-care')}
                 >
-                    💙 Self-Care
+                    Self-Care
                 </button>
             </div>
 
@@ -120,6 +130,9 @@ export default function Tasks() {
 
                     return (
                         <div key={task.id} className={`task-card ${isCompleted ? 'completed' : ''}`}>
+                            <div className="task-icon">
+                                <img src={task.icon} alt="" aria-hidden="true" />
+                            </div>
                             <div className="task-header">
                                 <h3>{task.title}</h3>
                                 {isCompleted ? (

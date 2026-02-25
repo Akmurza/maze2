@@ -6,7 +6,7 @@ export default function AIAssistant() {
     const [messages, setMessages] = useState([
         {
             role: 'assistant',
-            content: '🐋 Hello! I\'m here to support you on your unmasking journey. How are you feeling today?'
+            content: 'Hello. I am the companion with soft edges. Say anything; I will keep the useful pieces.'
         }
     ]);
     const [input, setInput] = useState('');
@@ -38,7 +38,7 @@ export default function AIAssistant() {
         } catch (error) {
             setMessages(prev => [...prev, {
                 role: 'assistant',
-                content: '😔 Sorry, I encountered an error. Please check your internet connection or API token.'
+                content: 'Something slipped. Check the connection or token and we try again.'
             }]);
         } finally {
             setLoading(false);
@@ -53,7 +53,7 @@ export default function AIAssistant() {
         <div className="ai-assistant-page">
             <div className="chat-container">
                 <div className="chat-header">
-                    <h1>🐋 AI Companion</h1>
+                    <h1>AI Companion</h1>
                     <p>Your safe space for authentic conversation</p>
                 </div>
 
@@ -61,7 +61,7 @@ export default function AIAssistant() {
                     {messages.map((msg, idx) => (
                         <div key={idx} className={`message ${msg.role}`}>
                             <div className="message-avatar">
-                                {msg.role === 'user' ? '🌊' : '🐋'}
+                                {msg.role === 'user' ? 'YOU' : 'AI'}
                             </div>
                             <div className="message-content">
                                 {msg.content}
@@ -70,7 +70,7 @@ export default function AIAssistant() {
                     ))}
                     {loading && (
                         <div className="message assistant">
-                            <div className="message-avatar">🐋</div>
+                            <div className="message-avatar">AI</div>
                             <div className="message-content">
                                 <Loader className="spinner" size={16} />
                                 Thinking...

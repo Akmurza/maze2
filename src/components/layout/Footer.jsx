@@ -19,7 +19,7 @@ export default function Footer() {
 
                 <div className="footer-info">
                     <p>&copy; {new Date().getFullYear()} Unmasked | Your Safe Space</p>
-                    <p>Built with 💙 for the autistic community</p>
+                    <p>Built with care for the autistic community</p>
                 </div>
             </div>
         </footer>
