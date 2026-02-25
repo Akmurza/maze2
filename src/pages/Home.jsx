@@ -97,7 +97,7 @@ export default function Home() {
                 <div className="container">
                     <blockquote>
                         <p>"The deep is quiet, the surface is loud, and somewhere between them your kettle whistles."</p>
-                        <cite>— Someone in the Hallway</cite>
+                        <cite>— Someone in the Abyssal Blue</cite>
                     </blockquote>
                 </div>
             </section>

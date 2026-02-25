@@ -569,6 +569,20 @@ h4 { font-size: 1rem; }
     text-align: center;
     border-top: 3px solid var(--rust);
     border-bottom: 3px solid var(--rust);
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/kit.jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(3px) grayscale(0.4);
+    pointer-events: none;
 }
 
 .quote-section blockquote {
@@ -576,6 +590,8 @@ h4 { font-size: 1rem; }
     font-style: italic;
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .quote-section cite {
@@ -585,11 +601,35 @@ h4 { font-size: 1rem; }
 }
 
 /* ===== PROGRESS PAGE ===== */
+.progress-page {
+    position: relative;
+    min-height: 100vh;
+}
+
+.progress-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/kit2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    filter: blur(2px) grayscale(0.5);
+    pointer-events: none;
+    z-index: 0;
+}
+
 .stats-overview {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
 }
 
 .stat-box {
@@ -1162,35 +1202,36 @@ body.journey-theme .footer-nav a:hover {
 }
 
 .tasks-page .smoke {
-    position: absolute;
-    bottom: -80px;
-    width: 160px;
-    height: 160px;
-    background: radial-gradient(circle at 40% 40%, rgba(239, 233, 220, 0.4), rgba(192, 75, 43, 0.15), rgba(255, 255, 255, 0));
-    filter: blur(18px);
-    opacity: 0.75;
+    position: fixed;
+    bottom: 0;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(42, 42, 42, 0.4), 
+        rgba(111, 119, 125, 0.25), 
+        transparent);
+    filter: blur(30px);
+    opacity: 1;
     animation: smoke-rise linear infinite;
-    z-index: 0;
+    z-index: 5;
     pointer-events: none;
 }
 
 .tasks-page .smoke-1 { left: 5%; animation-duration: 18s; }
-.tasks-page .smoke-2 { left: 30%; width: 120px; height: 120px; animation-duration: 14s; animation-delay: 2s; }
-.tasks-page .smoke-3 { left: 60%; width: 180px; height: 180px; animation-duration: 20s; animation-delay: 4s; }
-.tasks-page .smoke-4 { left: 85%; width: 110px; height: 110px; animation-duration: 16s; animation-delay: 1s; }
+.tasks-page .smoke-2 { left: 30%; width: 200px; height: 200px; animation-duration: 14s; animation-delay: 2s; }
+.tasks-page .smoke-3 { left: 60%; width: 300px; height: 300px; animation-duration: 20s; animation-delay: 4s; }
+.tasks-page .smoke-4 { left: 85%; width: 180px; height: 180px; animation-duration: 16s; animation-delay: 1s; }
 
 @keyframes smoke-rise {
-    to { transform: translateY(-700px); opacity: 0; }
+    0% { transform: translateY(0) scale(1); opacity: 0.9; }
+    100% { transform: translateY(-800px) scale(1.5); opacity: 0; }
 }
 
 .tasks-page .tasks-header,
 .tasks-page .filter-buttons,
 .tasks-page .tasks-grid {
     position: relative;
-    z-index: 1;
-    position: relative;
-    z-index: 1;
-    box-shadow: 3px 3px 0 var(--ink);
+    z-index: 10;
 }
 
 .send-btn:disabled {
@@ -1219,6 +1260,8 @@ body.journey-theme .footer-nav a:hover {
 .tasks-page {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    min-height: 100vh;
 }
 
 .tasks-header {
