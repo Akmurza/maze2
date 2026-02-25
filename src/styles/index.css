@@ -118,7 +118,7 @@ body {
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     align-items: center;
 }
 
@@ -126,9 +126,10 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--white);
+    text-decoration: none;
 }
 
 .whale-icon {
@@ -158,6 +159,7 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 25px;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .header nav a:hover {
@@ -195,10 +197,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    
 }
 
 .footer-nav a {
     color: var(--white);
+    text-decoration: none;
 }
 
 .footer-info p {
