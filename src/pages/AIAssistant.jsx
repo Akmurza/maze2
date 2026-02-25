@@ -11,6 +11,7 @@ export default function AIAssistant() {
     ]);
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
+    const [userHasSent, setUserHasSent] = useState(false);
     const messagesEndRef = useRef(null);
 
     // Auto-scroll к новым сообщениям
@@ -25,6 +26,7 @@ export default function AIAssistant() {
         setMessages(prev => [...prev, userMessage]);
         setInput('');
         setLoading(true);
+        setUserHasSent(true);
 
         try {
             // Берём последние 6 сообщений для контекста
@@ -80,18 +82,20 @@ export default function AIAssistant() {
                     <div ref={messagesEndRef} />
                 </div>
 
-                <div className="quick-responses">
-                    {quickResponses.map((text, idx) => (
-                        <button
-                            key={idx}
-                            onClick={() => handleQuickResponse(text)}
-                            className="quick-btn"
-                            disabled={loading}
-                        >
-                            {text}
-                        </button>
-                    ))}
-                </div>
+                {!userHasSent && (
+                    <div className="quick-responses">
+                        {quickResponses.map((text, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => handleQuickResponse(text)}
+                                className="quick-btn"
+                                disabled={loading}
+                            >
+                                {text}
+                            </button>
+                        ))}
+                    </div>
+                )}
 
                 <div className="chat-input-container">
                     <input
