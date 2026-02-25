@@ -1510,6 +1510,65 @@ body.journey-theme .footer-nav a:hover {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+    .header-content {
+        padding: 1rem 1.5rem;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1001;
+    }
+
+    .header nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #111111, #2a2a2a);
+        border-bottom: 3px solid var(--rust);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .header nav.show {
+        max-height: 400px;
+    }
+
+    .header nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 0;
+    }
+
+    .header nav li {
+        width: 100%;
+    }
+
+    .header nav a {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: left;
+    }
+
+    .header nav a:hover {
+        box-shadow: none;
+        border-bottom: 1px solid var(--acid);
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .whale-icon {
+        font-size: 1.4rem;
+    }
+
     .chat-container {
         height: calc(100vh - 150px);
         border-radius: 0;
@@ -1525,5 +1584,17 @@ body.journey-theme .footer-nav a:hover {
 
     .progress-stats {
         grid-template-columns: 1fr;
+    }
+
+    .pathways-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .main-content {
+        padding: 1rem 0.5rem;
     }
 }
